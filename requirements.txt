@@ -12,5 +12,6 @@ python-docx
 beautifulsoup4
 streamlit
 numpy
+moviepy
 
 -e .
