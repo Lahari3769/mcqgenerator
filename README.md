@@ -1,14 +1,15 @@
 # 📄 LLM-Powered Multimodal Quiz & Assessment Generator
 
-A **Streamlit-based end-to-end multimodal GenAI application** that generates and evaluates quizzes from text, documents, images, audio, and video using a unified LLM-driven pipeline.
+A **Streamlit-based end-to-end multimodal GenAI application** that generates and evaluates quizzes from text, documents, images, audio, video and Web URLs using a unified LLM-driven pipeline.
 
 The app supports:
 
+- ✍️ Direct text input 
 - 📄 PDF & Word documents  
-- 🖼 Images (OCR)  
-- 🔊 Audio files (speech-to-text)  
-- 🌐 Web pages  
-- ✍️ Direct text input  
+- 🖼 Images
+- 🔊 Audio files
+- 🎬 Video files
+- 🌐 Web URLs   
 
 ---
 
@@ -18,9 +19,10 @@ The app supports:
 - **DOCX parsing** with python-docx  
 - **Image OCR** via OpenCV + Tesseract  
 - **Audio transcription** using OpenAI Whisper  
+- **Video transcription & frame analysis** using OpenAI Whisper + OpenCV  
 - **Web scraping** with BeautifulSoup  
 - **LLM integration** using Hugging Face Inference API  
-- **Interactive UI** powered by Streamlit  
+- **Interactive UI** powered by Streamlit 
 
 ---
 
@@ -30,9 +32,10 @@ The app supports:
 - **OCR:** Tesseract, OpenCV, Pillow  
 - **Speech-to-Text:** OpenAI Whisper, FFmpeg  
 - **Document Parsing:** PyMuPDF, python-docx  
+- **Video Processing:** OpenCV, FFmpeg  
 - **Web Scraping:** BeautifulSoup  
 - **LLMs:** Hugging Face Hub  
-- **Environment Management:** python-dotenv  
+- **Environment Management:** python-dotenv   
 
 ---
 
@@ -136,11 +139,34 @@ tesseract --version
 
 ### 🔐 Environment Variables
 
-Create a `.env` file in the project root:
+This project requires a Hugging Face API key for accessing LLMs. Follow these steps:
+
+1. **Create a Hugging Face Account**
+
+   * Go to [https://huggingface.co/join](https://huggingface.co/join)
+   * Sign up or log in.
+
+2. **Go to Access Tokens**
+
+   * Click your profile → **Settings** → **Access Tokens**
+   * Or directly: [https://huggingface.co/settings/tokens](https://huggingface.co/settings/tokens)
+
+3. **Create a New Token**
+
+   * Click **New token**
+   * Name it (e.g., `MCQGenerator`)
+   * Role: `Read`
+   * Click **Generate**
+
+4. **Copy the Token**
+
+5. **Create a `.env` file** in the project root and add:
 
 ```env
 HUGGINGFACEHUB_API_TOKEN=your_api_key_here
 ```
+
+Replace `your_api_key_here` with your copied token.
 
 ---
 
@@ -156,6 +182,4 @@ Then open your browser at:
 
 ```
 http://localhost:8501
-```
-
 ```
