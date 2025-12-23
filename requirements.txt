@@ -1,0 +1,16 @@
+python-dotenv
+requests
+setuptools
+huggingface-hub
+openai-whisper
+ffmpeg-python
+Pillow
+opencv-python
+pytesseract
+PyMuPDF
+python-docx
+beautifulsoup4
+streamlit
+numpy
+
+-e .

@@ -1,0 +1,4 @@
+venv
+.env
+mcq_generator.egg-info
+experiment
